@@ -1,7 +1,6 @@
 language: node_js
-
 node_js:
-  - "10.9.0"
+   - 10.9.0
 
 cache: npm
 
@@ -9,14 +8,8 @@ env:
   - $NOW_TOKEN=bLogR63FWs5QvdAAWBIVTzVj
 
 before_install:
-  - ls -la
   - "npm config set splin false"
   - npm i -g now
-
-deploy:
-  provide: script
-  script: bash scripts/deploy.sh
-  skip_cleanup: true
 
 install:
   - npm install
@@ -24,3 +17,8 @@ install:
 script:
   - npm run build
   - npm run test
+
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  skip_cleanup: true
