@@ -5,5 +5,22 @@ node_js:
 
 cache: npm
 
+env:
+  - NOW_TOKEN: bLogR63FWs5QvdAAWBIVTzVj
+
 before_install:
   - ls -la
+  - "npm config set splin false"
+  - npm i -g now
+
+deploy:
+  provide: script
+  script: bash scripts/deploy.sh
+  skip_cleanup: true
+
+install:
+  - npm install
+ 
+script:
+  - npm run build
+  - npm run test
