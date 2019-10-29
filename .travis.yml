@@ -8,7 +8,7 @@ env:
   - $NOW_TOKEN=bLogR63FWs5QvdAAWBIVTzVj
 
 before_install:
-  - "npm config set splin false"
+  - "npm config set spin false"
   - npm i -g now
 
 install:
